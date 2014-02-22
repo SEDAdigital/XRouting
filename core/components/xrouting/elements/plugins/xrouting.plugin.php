@@ -63,30 +63,37 @@ switch ($modx->event->name) {
             
             if (!empty($contexts)) {
                 $requestUrl = $_SERVER['HTTP_HOST'] . rtrim($_SERVER['REQUEST_URI'],'/').'/';
-                $found = false;
+                $matches = array();
                 
                 foreach ($contexts as $cKey => $cSettings) {
                     
                     $strpos = strpos($requestUrl, $cSettings['http_host'] . $cSettings['base_url']);
                     if ($strpos === 0 && !empty($cSettings['http_host']) && !empty($cSettings['base_url'])) {
-                        // found a match
-                        $found = true;
-                        
-                        // do we need to switch the context?
-                        if ($modx->context->get('key') != $cKey) {
-                            $modx->switchContext($cKey);
-                        }
-                        
-                        // remove base_url from request query
-                        if ($cSettings['base_url'] != '/') {
-                            $pieces = explode('/', trim($_REQUEST[$modx->getOption('request_param_alias', null, 'q')], ' '), 2);
-                            $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $pieces[1];
-                        }
-                        break;
+                        $matches[strlen($cSettings['base_url'])] = $cSettings + array('key' => $cKey);
                     }
                 }
-                // if no match found
-                if (!$found) $modx->sendErrorPage();
+                
+                
+                if (!empty($matches)) {
+                	
+                	$cSettings = $matches[max(array_keys($matches))];
+                	$cKey = $cSettings['key'];
+                	
+	                // do we need to switch the context?
+                    if ($modx->context->get('key') != $cKey) {
+                        $modx->switchContext($cKey);
+                    }
+                    
+                    // remove base_url from request query
+                    if ($cSettings['base_url'] != '/') {
+                        $pieces = explode('/', trim($_REQUEST[$modx->getOption('request_param_alias', null, 'q')], ' '), 2);
+                        $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $pieces[1];
+                    }
+                        
+                } else {
+	                // if no match found
+	                $modx->sendErrorPage();
+                }
             }
         }
     break;
