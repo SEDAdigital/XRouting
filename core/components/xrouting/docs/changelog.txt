@@ -1,3 +1,11 @@
+XRouting 1.1.0-pl (2014-02-24)
+===========================================
+- small refactoring for quicker host-based matching
+- bugfix for contexts with same host where one base_url is '/'
+- added setting to include www subdomain: xrouting.include_www
+- added setting to eigher show an error or a default context when no match has been found: xrouting.show_no_match_error
+- added setting for a default context (if no match was found and xrouting.show_no_match_error is false): xrouting.default_context
+
 XRouting 1.0.0-pl (2014-02-01)
 ===========================================
 - first public release
