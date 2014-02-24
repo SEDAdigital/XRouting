@@ -15,8 +15,8 @@ All you need to do is to install this plugin and make sure your contexts have ht
 
 System Settings
 ------------------
-You can add the following system settings: 
-```xrouting.include_www``` - automatically include www subdomain
-```xrouting.show_no_match_error``` set to true to show the error page if no matching context has been found (false will show the default context instead)
-```xrouting.default_context``` define the default context if no matching context has been found and ```xrouting.show_no_match_error``` is false
+You can add the following system settings:
++ ```xrouting.include_www``` - automatically include www subdomain
++ ```xrouting.show_no_match_error``` - set to true to show the error page if no matching context has been found (false will show the default context instead)
++ ```xrouting.default_context``` - define the default context if no matching context has been found and ```xrouting.show_no_match_error``` is false
 
