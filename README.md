@@ -19,4 +19,4 @@ You can add the following system settings:
 + ```xrouting.include_www``` - automatically include www subdomain
 + ```xrouting.show_no_match_error``` - set to true to show the error page if no matching context has been found (false will show the default context instead)
 + ```xrouting.default_context``` - define the default context if no matching context has been found and ```xrouting.show_no_match_error``` is false
-
++ ```xrouting.reset_after_contextswitch_settings``` - commaseperated list of system-settings, if some system-settings shouldn't be touched on contextSwitch, for example ```cultureKey,base_url```, which was set by another plugin at onInitCulture
