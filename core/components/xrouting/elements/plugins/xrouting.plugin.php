@@ -124,15 +124,13 @@ switch ($modx->event->name) {
                 //die($cKey);
 
                 //get current settings, which shouldn't change after context-switch
-                $settings_to_reset = explode(',',$modx->getOption('xrouting.reset_after_contextswitch_settings'));
+                $settings_to_reset = explode(',', $modx->getOption('xrouting.reset_after_contextswitch_settings'));
                 $reset_settings = array();
-                if (!empty($settings_to_reset)){
-                    foreach ($settings_to_reset as $setting){
+                if (!empty($settings_to_reset)) {
+                    foreach ($settings_to_reset as $setting) {
                         $reset_settings[$setting] = $modx->getOption($setting);
                     }
                 }
-                
-                //$mml_settings = array('cultureKey' => $modx->getOption('cultureKey'), 'site_url' => $modx->getOption('site_url'));
 
                 // do we need to switch the context?
                 if ($modx->context->get('key') != $cKey) {
@@ -140,12 +138,13 @@ switch ($modx->event->name) {
                 }
 
                 //reset settings
-                if (!empty($reset_settings));
-                
-                $modx->setPlaceholders($reset_settings, '+');
-                foreach ($reset_settings as $key => $value) {
-                    $modx->setOption($key, $value);
+                if (!empty($reset_settings)) {
+                    $modx->setPlaceholders($reset_settings, '+');
+                    foreach ($reset_settings as $key => $value) {
+                        $modx->setOption($key, $value);
+                    }
                 }
+
 
                 // remove base_url from request query
                 if ($cSettings['base_url'] != '/') {
