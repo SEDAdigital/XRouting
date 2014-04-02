@@ -119,7 +119,7 @@ switch ($modx->event->name) {
             	$cSettings = $contexts[$matches[max(array_keys($matches))]];
             	$cKey = $matches[max(array_keys($matches))];
             	
-            	die($cKey);
+            	//die($cKey);
             	
                 // do we need to switch the context?
                 if ($modx->context->get('key') != $cKey) {
