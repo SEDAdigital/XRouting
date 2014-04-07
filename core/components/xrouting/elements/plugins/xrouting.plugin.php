@@ -94,7 +94,7 @@ switch ($modx->event->name) {
         	if ($modx->getOption('xrouting.include_www', null, true)) {
 	        	$http_host = str_replace('www.','',$http_host);
         	}
-            $requestUrl = '/'.rtrim($_REQUEST[$modx->getOption('request_param_alias', null, 'q')],'/').'/';
+            $requestUrl = '/'.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')];
             $matches = array();
             
             
@@ -128,7 +128,7 @@ switch ($modx->event->name) {
                 
                 // remove base_url from request query
                 if ($cSettings['base_url'] != '/') {
-                	$newRequestUrl = str_replace($cSettings['base_url'],'/',$requestUrl);
+                    $newRequestUrl = ltrim(str_replace($cSettings['base_url'],'/',$requestUrl),'/');
                     $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $newRequestUrl;
                 }
                 
