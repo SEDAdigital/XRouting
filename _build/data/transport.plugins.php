@@ -3,11 +3,12 @@ $plugins = array();
 
 /* create the plugin object */
 $plugins[0] = $modx->newObject('modPlugin');
-$plugins[0]->set('id',1);
-$plugins[0]->set('name','XRouting');
-$plugins[0]->set('description','XRouting is a simple plugin that handles requests for different contexts. It automatically switches the context based on a (sub)domain AND/OR subfolder.');
-$plugins[0]->set('plugincode', getSnippetContent($sources['plugins'] . 'xrouting.plugin.php'));
-$plugins[0]->set('category', 0);
+$plugins[0]->fromArray(array(
+    'id' => 1,
+    'name' => 'XRouting',
+    'description' => 'XRouting is a simple plugin that handles requests for different contexts. It automatically switches the context based on a (sub)domain AND/OR subfolder.',
+    'plugincode' => getSnippetContent($sources['plugins'] . 'xrouting.plugin.php'),
+),'',true,true);
 
 $events = array();
 $events['OnHandleRequest']= $modx->newObject('modPluginEvent');
@@ -37,12 +38,10 @@ $events['OnSiteRefresh']->fromArray(array(
 
 if (is_array($events) && !empty($events)) {
     $plugins[0]->addMany($events);
-    $modx->log(xPDO::LOG_LEVEL_INFO,'Packaged in '.count($events).' Plugin Events for XRouting.'); flush();
+    $modx->log(xPDO::LOG_LEVEL_INFO,'Added '.count($events).' Plugin Events for the XRouting plugin.'); flush();
 } else {
-    $modx->log(xPDO::LOG_LEVEL_ERROR,'Could not find plugin events for XRouting!');
+    $modx->log(xPDO::LOG_LEVEL_ERROR,'Could not find plugin events for XRouting!'); flush();
 }
 unset($events);
 
 return $plugins;
-
-
