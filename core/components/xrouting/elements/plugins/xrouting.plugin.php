@@ -94,7 +94,7 @@ switch ($modx->event->name) {
         	if ($modx->getOption('xrouting.include_www', null, true)) {
 	        	$http_host = str_replace('www.','',$http_host);
         	}
-            $requestUrl = '/'.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')];
+            $requestUrl = $_REQUEST[$modx->getOption('request_param_alias', null, 'q')];
             $matches = array();
             
             
@@ -102,24 +102,24 @@ switch ($modx->event->name) {
             $matched_contexts = $contexts['_hosts'][$http_host];
             
             
+            
             foreach ($matched_contexts as $index => $ckey) {
                 
                 $context = $contexts[$ckey];
-                
-                $strpos = strpos($requestUrl, $contexts[$ckey]['base_url']);
+                $strpos = strpos('/'.$requestUrl, $contexts[$ckey]['base_url']);
                 
                 if ($strpos === 0) {
                     $matches[strlen($contexts[$ckey]['base_url'])] = $ckey;
                 }
             }
             
+//die('<pre>'.print_r($matches,true));
 
             if (!empty($matches)) {
             	
             	$cSettings = $contexts[$matches[max(array_keys($matches))]];
             	$cKey = $matches[max(array_keys($matches))];
             	
-            	//die($cKey);
             	
                 // do we need to switch the context?
                 if ($modx->context->get('key') != $cKey) {
@@ -128,9 +128,10 @@ switch ($modx->event->name) {
                 
                 // remove base_url from request query
                 if ($cSettings['base_url'] != '/') {
-                    $newRequestUrl = ltrim(str_replace($cSettings['base_url'],'/',$requestUrl),'/');
+                    $newRequestUrl = str_replace($cSettings['base_url'],'','/'.$requestUrl);
                     $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $newRequestUrl;
                 }
+                
                 
             } else {
                 // if no match found
