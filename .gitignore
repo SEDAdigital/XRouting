@@ -13,6 +13,9 @@ build/*
 *.xcworkspace
 xcuserdata
 
+# phpstorm noise
+.idea/*
+
 # svn & cvs
 .svn
 CVS
