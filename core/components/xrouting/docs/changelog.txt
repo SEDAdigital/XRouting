@@ -1,3 +1,7 @@
+XRouting 1.2.0-pl (2014-03-17)
+===========================================
+- this releases fixes some problems with rewriting the request url
+
 XRouting 1.1.0-pl (2014-02-24)
 ===========================================
 - small refactoring for quicker host-based matching
