@@ -106,7 +106,7 @@ switch ($modx->event->name) {
             foreach ($matched_contexts as $index => $ckey) {
                 
                 $context = $contexts[$ckey];
-                $strpos = strpos('/'.$requestUrl, $contexts[$ckey]['base_url']);
+                $strpos = strpos(MODX_BASE_URL.$requestUrl, $contexts[$ckey]['base_url']);
                 
                 if ($strpos === 0) {
                     $matches[strlen($contexts[$ckey]['base_url'])] = $ckey;
@@ -128,7 +128,7 @@ switch ($modx->event->name) {
                 
                 // remove base_url from request query
                 if ($cSettings['base_url'] != '/') {
-                    $newRequestUrl = str_replace($cSettings['base_url'],'','/'.$requestUrl);
+                    $newRequestUrl = str_replace($cSettings['base_url'],'',MODX_BASE_URL.$requestUrl);
                     $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $newRequestUrl;
                 }
                 
