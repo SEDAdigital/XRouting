@@ -127,7 +127,7 @@ switch ($modx->event->name) {
                 }
                 
                 // remove base_url from request query
-                if ($cSettings['base_url'] != '/') {
+                if ($cSettings['base_url'] != MODX_BASE_URL) {
                     $newRequestUrl = str_replace($cSettings['base_url'],'',MODX_BASE_URL.$requestUrl);
                     $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] = $newRequestUrl;
                 }
