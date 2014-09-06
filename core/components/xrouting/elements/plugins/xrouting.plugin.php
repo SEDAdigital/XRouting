@@ -103,7 +103,7 @@ switch ($modx->event->name) {
             
             
             
-            foreach ($matched_contexts as $index => $ckey) {
+            foreach ((array) $matched_contexts as $index => $ckey) {
                 
                 $context = $contexts[$ckey];
                 $strpos = strpos(MODX_BASE_URL.$requestUrl, $contexts[$ckey]['base_url']);
