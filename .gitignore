@@ -19,3 +19,6 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
+
+#packages
+_packages/*
