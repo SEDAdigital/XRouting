@@ -21,8 +21,8 @@ set_time_limit(0);
 /* define package */
 define('PKG_NAME','XRouting');
 define('PKG_NAMESPACE',strtolower(PKG_NAME));
-define('PKG_VERSION','1.1.0');
-define('PKG_RELEASE','beta');
+define('PKG_VERSION','1.3.0');
+define('PKG_RELEASE','pl');
 
 $root = dirname(dirname(__FILE__)).'/';
 $sources = array (
