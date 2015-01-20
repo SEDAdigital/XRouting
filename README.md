@@ -12,13 +12,15 @@ You can also use `http_host_aliases` to route multiple domains to one context.
 Instructions
 ------------------
 
-All you need to do is to [install](http://modx.com/extras/package/xrouting) this plugin and make sure your contexts have `http_host` and `base_url` context settings set.
+All you need to do is to [install](http://modx.com/extras/package/xrouting) this plugin and make sure your contexts have `http_host`, `base_url`, `site_url` and `site_start` context settings set.
+
+/!\ Please make sure to add your `http_host` and `site_url` without `www.` if the ```xrouting.include_www``` setting is enabled (default!)
 
 
 System Settings
 ------------------
 You can set the following system settings:
-+ ```xrouting.include_www``` - automatically include www subdomain
++ ```xrouting.include_www``` - automatically include www subdomain (default: yes)
 + ```xrouting.show_no_match_error``` - set to true to show the error page if no matching context has been found (false will show the default context instead)
 + ```xrouting.default_context``` - define the default context if no matching context has been found and ```xrouting.show_no_match_error``` is false
 
