@@ -1,3 +1,8 @@
+XRouting 1.4.1-pl (2015-05-20)
+===========================================
+- added missing lexicons for allow_debug_info setting
+- added german lexicons
+
 XRouting 1.4.0-pl (2015-05-20)
 ===========================================
 - replaced php constant for MODX_BASE_URL
