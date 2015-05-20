@@ -23,4 +23,9 @@ You can set the following system settings:
 + ```xrouting.include_www``` - automatically include www subdomain (default: yes)
 + ```xrouting.show_no_match_error``` - set to true to show the error page if no matching context has been found (false will show the default context instead)
 + ```xrouting.default_context``` - define the default context if no matching context has been found and ```xrouting.show_no_match_error``` is false
++ `xrouting.allow_debug_info` - activate this setting and add `&xrouting-debug=1` to your URL and you will get a handy debug output if your routing isn't working as expected
 
+
+Troubleshooting
+------------------
+If your context routing isn't working as expected you can active the `xrouting.allow_debug_info` system setting and add `&xrouting-debug=1` to your URL to get a handy debug output. If you can't find any issue in your debug output feel free to open an issue and paste your debug output into the issue.
