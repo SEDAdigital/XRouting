@@ -109,7 +109,6 @@ switch ($modx->event->name) {
                 
                 $context = $contexts[$ckey];
                 $strpos = strpos($requestUrl, $contexts[$ckey]['base_url']);
-                //echo $requestUrl . ' - '. $contexts[$ckey]['base_url']."<br>";
                 if ($strpos === 0) {
                     $matches[strlen($contexts[$ckey]['base_url'])] = $ckey;
                 }
