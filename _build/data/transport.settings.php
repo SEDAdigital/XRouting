@@ -28,4 +28,13 @@ $settings['xrouting.show_no_match_error']->fromArray(array(
     'area' => 'common',
 ),'',true,true);
 
+$settings['xrouting.allow_debug_info']= $modx->newObject('modSystemSetting');
+$settings['xrouting.allow_debug_info']->fromArray(array(
+    'key' => 'xrouting.allow_debug_info',
+    'value' => false,
+    'xtype' => 'combo-boolean',
+    'namespace' => 'xrouting',
+    'area' => 'common',
+),'',true,true);
+
 return $settings;
