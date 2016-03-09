@@ -96,7 +96,7 @@ switch ($modx->event->name) {
                 $http_host = str_replace('www.','',$http_host);
             }
             
-            $baseUrlSetting = $modx->getObject('modSystemSetting', ‚base_url');
+            $baseUrlSetting = $modx->getObject('modSystemSetting', 'base_url');
             $modx_base_url = $baseUrlSetting->get('value');
             if (!$modx_base_url) $modx_base_url = MODX_BASE_URL;
             
