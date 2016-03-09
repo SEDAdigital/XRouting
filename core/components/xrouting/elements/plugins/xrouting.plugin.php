@@ -152,7 +152,7 @@ switch ($modx->event->name) {
                 $debuginfo .= "## Requested URL: " . $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] . "\n\n\n";
                 $debuginfo .= "## Requested URL with base_url: ". $requestUrl ."\n\n\n";
                 $debuginfo .= "## Matched context(s) (Array key defines match quality):\n\n" . print_r($matches,true) . "\n\n\n";
-                $debuginfo .= "## Request will go to context: " . $matches[max(array_keys($matches))] . "\n\n\n";
+                $debuginfo .= "## Request will go to context: " . $matches[@max(array_keys($matches))] . "\n\n\n";
                 $debuginfo .= "## Modified request URL: " . $newRequestUrl . "\n\n\n";
                 die($debuginfo);
             }
