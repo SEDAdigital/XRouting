@@ -96,8 +96,9 @@ switch ($modx->event->name) {
                 $http_host = str_replace('www.','',$http_host);
             }
             
+            $modx_base_url = false;
             $baseUrlSetting = $modx->getObject('modSystemSetting', 'base_url');
-            $modx_base_url = $baseUrlSetting->get('value');
+            if ($baseUrlSetting) $modx_base_url = $baseUrlSetting->get('value');
             if (!$modx_base_url) $modx_base_url = MODX_BASE_URL;
             
             $requestUrl = str_replace('//','/',$modx_base_url.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')]);
