@@ -127,6 +127,12 @@ switch ($modx->event->name) {
                 // do we need to switch the context?
                 if ($modx->context->get('key') != $cKey) {
                     $modx->switchContext($cKey);
+                    
+                    // set locale since $modx->_initCulture is called before OnHandleRequest
+                    if ($modx->getOption('setlocale', null, true)) {
+                        $locale = setlocale(LC_ALL, null);
+                        setlocale(LC_ALL, $modx->getOption('locale', null, $locale, true));
+                    }
                 }
                 
                 // remove base_url from request query
