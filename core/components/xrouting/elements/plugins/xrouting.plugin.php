@@ -128,6 +128,12 @@ switch ($modx->event->name) {
                 if ($modx->context->get('key') != $cKey) {
                     $modx->switchContext($cKey);
                     
+                    $cultureKey = $modx->getOption('cultureKey', null, 'en');
+                    if (!empty($_SESSION['cultureKey'])) $cultureKey = $_SESSION['cultureKey'];
+                    if (!empty($_REQUEST['cultureKey'])) $cultureKey = $_REQUEST['cultureKey'];
+                    $modx->cultureKey = $cultureKey;
+                    $modx->setOption('cultureKey', $cultureKey);
+        
                     // set locale since $modx->_initCulture is called before OnHandleRequest
                     if ($modx->getOption('setlocale', null, true)) {
                         $locale = setlocale(LC_ALL, null);
