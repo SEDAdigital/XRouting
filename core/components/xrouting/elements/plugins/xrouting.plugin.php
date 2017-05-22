@@ -159,7 +159,7 @@ switch ($modx->event->name) {
             }
         
         // output debug info
-            if ($_REQUEST['xrouting-debug'] == '1' && $modx->getOption('xrouting.allow_debug_info', null, false)) {
+            if (isset($_REQUEST['xrouting-debug']) && $_REQUEST['xrouting-debug'] == '1' && $modx->getOption('xrouting.allow_debug_info', null, false)) {
                 $debuginfo = '<pre>';
                 $debuginfo .= "## MODX context map:\n\n" . print_r($contexts,true) . "\n\n\n";
                 $debuginfo .= "## Requested URL: " . $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] . "\n\n\n";
