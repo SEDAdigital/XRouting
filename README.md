@@ -25,4 +25,4 @@ You can set the following system settings:
 
 Troubleshooting
 ------------------
-If your context routing isn't working as expected you can active the `xrouting.allow_debug_info` system setting and add `&xrouting-debug=1` to your URL to get a handy debug output. If you can't find any issue in your debug output feel free to open an issue and paste your debug output into the issue.
+If your context routing is not working as expected you can active the `xrouting.allow_debug_info` system setting and add `&xrouting-debug=1` to your URL to get a handy debug output. If you can't find any issue in your debug output feel free to open an issue and paste your debug output into the issue.
