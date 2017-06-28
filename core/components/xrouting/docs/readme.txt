@@ -10,4 +10,4 @@ the http_host and base_url settings you have already configured in your context 
 Instructions
 ------------------
 
-All you need to do is to install this plugin and make sure your contexts have http_host and base_url context settings set.
+All you need to do is to install this plugin and make sure your contexts have `http_host` and `base_url` context settings set. `http_host_aliases` can be used optionally.
