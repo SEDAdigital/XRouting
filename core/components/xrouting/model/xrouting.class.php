@@ -141,6 +141,8 @@ class XRouting
         // execute while bypassing eventual ACLs
         if ($query->stmt->execute()) {
             $contextSettings = $query->stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $contextSettings = array();
         }
 
         $contexts = array('_hosts' => array());
