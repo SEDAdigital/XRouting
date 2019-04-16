@@ -46,7 +46,7 @@ switch ($modx->event->name) {
     
     // "routing" part
     default:
-    case 'OnHandleRequest':
+    case 'OnMODXInit':
         if ($modx->context->get('key') == 'mgr') return;
             
         $contexts = array();

@@ -11,9 +11,9 @@ $plugins[0]->fromArray(array(
 ),'',true,true);
 
 $events = array();
-$events['OnHandleRequest']= $modx->newObject('modPluginEvent');
-$events['OnHandleRequest']->fromArray(array(
-    'event' => 'OnHandleRequest',
+$events['OnMODXInit']= $modx->newObject('modPluginEvent');
+$events['OnMODXInit']->fromArray(array(
+    'event' => 'OnMODXInit',
     'priority' => 0,
     'propertyset' => 0,
 ),'',true,true);
