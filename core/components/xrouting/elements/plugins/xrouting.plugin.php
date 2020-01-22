@@ -139,6 +139,32 @@ switch ($modx->event->name) {
                         $locale = setlocale(LC_ALL, null);
                         setlocale(LC_ALL, $modx->getOption('locale', null, $locale, true));
                     }
+                    
+                    // init the session, if it is disabled by anonymous_sessions = 0
+                    if ($modx->getOption('anonymous_sessions', null, true) && !isset($_COOKIE[session_name()])) {
+                        if (!$modx->startSession()) {
+                            $modx->log(modX::LOG_LEVEL_ERROR, 'Unable to initialize a session', '', __METHOD__, __FILE__, __LINE__);
+                            $modx->getUser($contextKey);
+                            return;
+                        }
+                        $modx->getUser($contextKey);
+                        $cookieExpiration = 0;
+                        if (isset ($_SESSION['modx.' . $contextKey . '.session.cookie.lifetime'])) {
+                            $cookieDomain = $modx->getOption('session_cookie_domain', $options, '');
+                            $cookiePath = $modx->getOption('session_cookie_path', $options, MODX_BASE_URL);
+                            $cookieSecure = (boolean)$modx->getOption('session_cookie_secure', $options, false);
+                            $cookieHttpOnly = (boolean)$modx->getOption('session_cookie_httponly', $options, true);
+                            $cookieLifetime = (integer)$modx->getOption('session_cookie_lifetime', $options, 0);
+                            $sessionCookieLifetime = (integer)$_SESSION['modx.' . $contextKey . '.session.cookie.lifetime'];
+                            if ($sessionCookieLifetime !== $cookieLifetime) {
+                                if ($sessionCookieLifetime) {
+                                    $cookieExpiration = time() + $sessionCookieLifetime;
+                                }
+                                setcookie(session_name(), session_id(), $cookieExpiration, $cookiePath, $cookieDomain,
+                                    $cookieSecure, $cookieHttpOnly);
+                            }
+                        }
+                    }
                 }
                 
                 // remove base_url from request query
