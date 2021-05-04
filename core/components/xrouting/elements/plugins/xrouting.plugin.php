@@ -101,7 +101,7 @@ switch ($modx->event->name) {
             if ($baseUrlSetting) $modx_base_url = $baseUrlSetting->get('value');
             if (!$modx_base_url) $modx_base_url = MODX_BASE_URL;
             
-            $requestUrl = str_replace('//','/',$modx_base_url.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')]);
+            $requestUrl = isset($_REQUEST[$modx->getOption('request_param_alias', null, 'q')]) ? str_replace('//','/',$modx_base_url.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')]) : $modx_base_url;
             $matches = array();
             
             
@@ -162,7 +162,7 @@ switch ($modx->event->name) {
             if (isset($_REQUEST['xrouting-debug']) && $_REQUEST['xrouting-debug'] == '1' && $modx->getOption('xrouting.allow_debug_info', null, false)) {
                 $debuginfo = '<pre>';
                 $debuginfo .= "## MODX context map:\n\n" . print_r($contexts,true) . "\n\n\n";
-                $debuginfo .= "## Requested URL: " . $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] . "\n\n\n";
+                $debuginfo .= "## Requested URL: " . (isset($_REQUEST[$modx->getOption('request_param_alias', null, 'q')]) ? $_REQUEST[$modx->getOption('request_param_alias', null, 'q')] : '') . "\n\n\n";
                 $debuginfo .= "## Requested URL with base_url: ". $requestUrl ."\n\n\n";
                 $debuginfo .= "## Matched context(s) (Array key defines match quality):\n\n" . print_r($matches,true) . "\n\n\n";
                 $debuginfo .= "## Request will go to context: " . $matches[@max(array_keys($matches))] . "\n\n\n";
