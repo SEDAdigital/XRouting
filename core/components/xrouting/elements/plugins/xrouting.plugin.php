@@ -101,7 +101,7 @@ switch ($modx->event->name) {
             if ($baseUrlSetting) $modx_base_url = $baseUrlSetting->get('value');
             if (!$modx_base_url) $modx_base_url = MODX_BASE_URL;
             
-            $requestUrl = isset($_REQUEST[$modx->getOption('request_param_alias', null, 'q')]) ? str_replace('//','/',$modx_base_url.$_REQUEST[$modx->getOption('request_param_alias', null, 'q')]) : $modx_base_url;
+            $requestUrl = str_replace('//', '/', $modx_base_url . ($_REQUEST[$modx->getOption('request_param_alias', null, 'q')] ?? ''));
             $matches = array();
             
             
