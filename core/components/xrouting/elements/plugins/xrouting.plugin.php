@@ -118,6 +118,11 @@ switch ($modx->event->name) {
                 }
             }
 
+            // find matching hosts without ckey
+            if (!empty($matched_contexts) && empty($matches)) {
+                $matches[] = $matched_contexts[0];
+            }
+
         // modify request for the matched context
             if (!empty($matches)) {
                 
