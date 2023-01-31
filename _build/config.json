@@ -1,0 +1,64 @@
+{
+  "name": "XRouting",
+  "lowCaseName": "xrouting",
+  "description": "Switch the context based on a (sub)domain and/or subfolder",
+  "author": "SEDAdigital",
+  "version": "1.5.0",
+  "package": {
+    "elements": {
+      "plugins": [
+        {
+          "name": "XRouting",
+          "description": "XRouting is a simple plugin that handles requests for different contexts. It automatically switches the context based on a (sub)domain AND/OR subfolder.",
+          "file": "xrouting.plugin.php",
+          "events": [
+            "OnHandleRequest",
+            "OnContextSave",
+            "OnContextRemove",
+            "OnSiteRefresh"
+          ]
+        }
+      ]
+    },
+    "systemSettings": [
+      {
+        "key": "include_www",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "1"
+      },
+      {
+        "key": "default_context",
+        "area": "system",
+        "value": "web"
+      },
+      {
+        "key": "show_no_match_error",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "1"
+      },
+      {
+        "key": "allow_debug_info",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "0"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "php",
+      "version": ">=7.4"
+    },
+    {
+      "name": "modx",
+      "version": ">=2.8"
+    }
+  ],
+  "build": {
+    "readme": "docs/readme.md",
+    "license": "docs/license.md",
+    "changelog": "docs/changelog.md"
+  }
+}

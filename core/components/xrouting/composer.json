@@ -1,0 +1,30 @@
+{
+  "name": "sedadigital/xrouting",
+  "description": "Switch the context based on a (sub)domain and/or subfolder",
+  "authors": [
+    {
+      "name": "Christian Seel",
+      "email": "office@seda.digital",
+      "homepage": "https://seda.digital/"
+    },
+    {
+      "name": "Thomas Jakobi",
+      "email": "office@treehillstudio.com",
+      "homepage": "https://treehillstudio.com"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "SEDAdigital\\XRouting\\": "src/"
+    }
+  }
+}

@@ -1,24 +1,13 @@
-# osx noise
-.DS_Store
-profile
+_build/build.config.php
+config.core.php
 
-# xcode noise
-build/*
-*.mode1
-*.mode1v3
-*.mode2v3
-*.perspective
-*.perspectivev3
-*.pbxuser
-*.xcworkspace
-xcuserdata
+_build/site
 
-# phpstorm noise
-.idea/*
+icon/*.svg
 
-# svn & cvs
-.svn
-CVS
+_packages/*.*
+!_packages/.gitignore
+!_packages/*.zip
 
-#packages
-_packages/*
+node_modules/
+core/components/*/vendor/
