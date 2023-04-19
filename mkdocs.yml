@@ -6,7 +6,7 @@ edit_uri: tree/master/docs
 repo_name: 'Jako/xrouting'
 repo_url: https://github.com/Jako/xrouting
 
-copyright: '&copy; 2014-2023 <a href="https://seda.digital">SEDA.digital</a>'
+copyright: '&copy; 2014-2023 <a href="https://seda.digital">SEDA.digital</a>, 2023 <a href="https://github.com/Jako">Thomas Jakobi</a>'
 
 nav:
 - Description: 'index.md'
@@ -20,12 +20,12 @@ extra:
     url: matomo.treehillstudio.com
     site: 40
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Jako
+    - icon: fontawesome/brands/modx
+      link: https://modx.com/extras/package/xrouting
 
 theme:
   name: material
-  custom_dir: ../../mkdocs-material/material
+  custom_dir: ../../mkdocs-material-jako/material
 
   # 404 page
   static_templates:

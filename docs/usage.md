@@ -19,7 +19,7 @@ All you need to do is to install this plugin and make sure your contexts have
 `http_host_aliases` context settings set.
 
 To easily edit these context settings side by side, you can use the
-[CrossContextsSettings]( https://modx.com/extras/package/crosscontextssettings)
+[CrossContextsSettings](https://modx.com/extras/package/crosscontextssettings)
 extra.
 
 !!! caution
