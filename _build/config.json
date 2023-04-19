@@ -2,7 +2,7 @@
   "name": "XRouting",
   "lowCaseName": "xrouting",
   "description": "Switch the context based on a (sub)domain and/or subfolder",
-  "author": "SEDAdigital",
+  "author": "SEDAdigital, Thomas Jakobi",
   "version": "1.5.0",
   "package": {
     "elements": {
@@ -49,7 +49,7 @@
   "dependencies": [
     {
       "name": "php",
-      "version": ">=7.4"
+      "version": ">=7.2"
     },
     {
       "name": "modx",
@@ -59,6 +59,14 @@
   "build": {
     "readme": "docs/readme.md",
     "license": "docs/license.md",
-    "changelog": "docs/changelog.md"
+    "changelog": "docs/changelog.md",
+    "setupOptions": {
+      "source": "setup.options.php"
+    },
+    "resolver": {
+      "after": [
+        "resolve.treehillstudio.php"
+      ]
+    }
   }
 }

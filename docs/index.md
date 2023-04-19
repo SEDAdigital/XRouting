@@ -5,7 +5,7 @@ Simple routing plugin that handles requests for different contexts.
 ### Requirements
 
 * MODX Revolution 2.8+
-* PHP 7.4+
+* PHP 7.2+
 
 ### Features
 
