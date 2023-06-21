@@ -27,7 +27,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         hostname, the IP address, the PHP version and the MODX version of your
         MODX installation). Your data will be kept confidential and under no
         circumstances be used for promotional purposes or disclosed to third
-        parties.</p>
+        parties. We only like to know the usage count of this package.</p>
         
         <p>If you install this package, you are giving us your permission to
         collect, process and use that data for statistical purposes.</p>';
@@ -44,7 +44,8 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         the IP address, the PHP version, the MODX version of your MODX
         installation and the previous installed version of this extra package).
         Your data will be kept confidential and under no circumstances be used
-        for promotional purposes or disclosed to third parties.</p>
+        for promotional purposes or disclosed to third parties. We only like to
+        know the usage count of this package.</p>
 
         <p>If you upgrade this package, you are giving us your permission to
         collect, process and use that data for statistical purposes.</p>';
