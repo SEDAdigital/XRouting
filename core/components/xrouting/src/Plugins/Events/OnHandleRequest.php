@@ -134,7 +134,7 @@ class OnHandleRequest extends Plugin
 
         // set locale since $this->modx->_initCulture is called before OnHandleRequest
         if ($this->modx->getOption('setlocale', null, true)) {
-            $locale = setlocale(LC_ALL, null);
+            $locale = setlocale(LC_ALL, '0');
             setlocale(LC_ALL, $this->modx->getOption('locale', null, $locale, true));
         }
     }
