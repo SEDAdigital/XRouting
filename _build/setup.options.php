@@ -2,7 +2,7 @@
 /**
  * Setup options
  *
- * @package xrouting
+ * @package smartrouting
  * @subpackage build
  *
  * @var array $options
@@ -17,11 +17,11 @@ $output = '<style type="text/css">
 $values = [];
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
-        $output .= '<h2>Install XRouting</h2>
+        $output .= '<h2>Install SmartRouting</h2>
 
-        <p>Thanks for installing XRouting. This open source extra was
-        developed by SEDA.digital and is maintained by Treehill Studio - MODX
-        development in Münsterland.</p>
+        <p>Thanks for installing SmartRouting. This open source extra is
+        developed by Treehill Studio - MODX development in Münsterland. It
+        bases on the code of XRouting created by Christian Seel.</p>
 
         <p>During the installation, we will collect some statistical data (the
         hostname, the IP address, the PHP version and the MODX version of your
@@ -34,11 +34,11 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 
         break;
     case xPDOTransport::ACTION_UPGRADE:
-        $output .= '<h2>Upgrade XRouting</h2>
+        $output .= '<h2>Upgrade SmartRouting</h2>
 
-        <p>CronManager will be upgraded. This open source extra was developed
-        by SEDA.digital and is maintained by Treehill Studio - MODX development 
-        in Münsterland.</p>
+        <p>SmartRouting will be upgraded. This open source extra is
+        developed by Treehill Studio - MODX development in Münsterland. It
+        bases on the code of XRouting created by Christian Seel.</p>
 
         During the upgrade, we will collect some statistical data (the hostname,
         the IP address, the PHP version, the MODX version of your MODX

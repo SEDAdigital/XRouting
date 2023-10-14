@@ -2,7 +2,7 @@
 /**
  * Resolves install statistics
  *
- * @package xrouting
+ * @package smartrouting
  * @subpackage build
  *
  * @var array $options

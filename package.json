@@ -1,0 +1,17 @@
+{
+  "name": "smartrouting",
+  "description": "Switch the context based on a (sub)domain and/or subfolder",
+  "author": "Thomas Jakobi <office@treehillstudio.com>",
+  "private": true,
+  "devDependencies": {
+    "date-format": "^4.0.14",
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.1.4"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
+}

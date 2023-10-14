@@ -1,8 +1,8 @@
-[![Default Lexicon](https://hosted.weblate.org/widgets/modx-extras/-/modx-xrouting-standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/modx-xrouting-standard/)
+[![Default Lexicon](https://hosted.weblate.org/widgets/modx-extras/-/modx-smartrouting-standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/modx-smartrouting-standard/)
 
-# XRouting
+# SmartRouting
 
-Simple routing plugin that handles requests for different contexts.
+Switch the context based on a (sub)domain and/or subfolder.
 
 ## Features
 
@@ -16,12 +16,12 @@ MODX Package Management
 
 ## Documentation
 
-For more information please read the [documentation](https://jako.github.io/XRouting/).
+For more information please read the [documentation](https://jako.github.io/SmartRouting/).
 
 ## License
 
-The project is licensed under the [GPLv2 license](https://github.com/Jako/XRouting/blob/master/core/components/xrouting/docs/license.md).
+The project is licensed under the [GPLv2 license](https://github.com/Jako/SmartRouting/blob/master/core/components/smartrouting/docs/license.md).
 
 ## Translations
 
-Translations of the package can be made for the [Default Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-xrouting-standard/) and the [System Setting Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-xrouting-system-settings/)
+Translations of the package can be made for the [Default Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-smartrouting-standard/) and the [System Setting Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-smartrouting-system-settings/)

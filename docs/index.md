@@ -1,4 +1,4 @@
-# XRouting
+# SmartRouting
 
 Simple routing plugin that handles requests for different contexts.
 

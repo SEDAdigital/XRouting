@@ -1,6 +1,6 @@
 ## How it works
 
-XRouting is a simple plugin that handles requests for different contexts. It
+SmartRouting is a simple plugin that handles requests for different contexts. It
 automatically switches the context based on a (sub)domain AND/OR subfolder.
 
 It's like the Gateway plugin from the MODX docs, except you don't have to
@@ -24,23 +24,23 @@ extra.
 
 !!! caution
     Please make sure to add your `http_host` and `site_url` without `www.` when the 
-    `xrouting.include_www` setting is enabled (default!)
+    `smartrouting.include_www` setting is enabled (default!)
 
 ## System Settings
 
-XRouting uses the following system settings in the namespace `xrouting`:
+SmartRouting uses the following system settings in the namespace `smartrouting`:
 
 | Key                          | Name                  | Description                                                                                                                                                                                                | Default |
 |------------------------------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| xrouting.allow_debug_info    | Allow debug output    | Enable this setting to output debug info if the &xrouting-debug=1 GET parameter is set. ATTENTION: disable it again after you debugged your installation, since this exposes a lot information of project! | No      |
-| xrouting.default_context     | Default context       | The default context to redirect to if no matches were found and xrouting.show_no_match_error is set to No.                                                                                                 | web     |
-| xrouting.include_www         | Include WWW-subdomain | Specifies if the www-subdomain should automatically be included when matching against the base domain, ie. www.example.com should return the same context as example.com.                                  | Yes     |
-| xrouting.show_no_match_error | Return error messages | If set to yes, XRouting will return an error instead of redirecting to the default context.                                                                                                                | Yes     |
+| smartrouting.allow_debug_info    | Allow debug output    | Enable this setting to output debug info if the &smartrouting-debug=1 GET parameter is set. ATTENTION: disable it again after you debugged your installation, since this exposes a lot information of project! | No      |
+| smartrouting.default_context     | Default context       | The default context to redirect to if no matches were found and smartrouting.show_no_match_error is set to No.                                                                                                 | web     |
+| smartrouting.include_www         | Include WWW-subdomain | Specifies if the www-subdomain should automatically be included when matching against the base domain, ie. www.example.com should return the same context as example.com.                                  | Yes     |
+| smartrouting.show_no_match_error | Return error messages | If set to yes, SmartRouting will return an error instead of redirecting to the default context.                                                                                                                | Yes     |
 
 ## Troubleshooting
 
 If your context routing isn't working as expected you can activate the
-`xrouting.allow_debug_info` system setting and add `&xrouting-debug=1` to your
+`smartrouting.allow_debug_info` system setting and add `&smartrouting-debug=1` to your
 URL to get a handy debug output. If you can't find any issue in your debug
-output feel free to [open an issue](https://github.com/Jako/XRouting/issues) and
+output feel free to [open an issue](https://github.com/Jako/SmartRouting/issues) and
 paste your debug output into the issue.

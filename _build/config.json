@@ -1,16 +1,16 @@
 {
-  "name": "XRouting",
-  "lowCaseName": "xrouting",
+  "name": "SmartRouting",
+  "lowCaseName": "smartrouting",
   "description": "Switch the context based on a (sub)domain and/or subfolder",
-  "author": "SEDAdigital, Thomas Jakobi",
-  "version": "1.5.0",
+  "author": "Thomas Jakobi",
+  "version": "1.0.0",
   "package": {
     "elements": {
       "plugins": [
         {
-          "name": "XRouting",
-          "description": "XRouting is a simple plugin that handles requests for different contexts. It automatically switches the context based on a (sub)domain AND/OR subfolder.",
-          "file": "xrouting.plugin.php",
+          "name": "SmartRouting",
+          "description": "Switch the context based on a (sub)domain and/or subfolder",
+          "file": "smartrouting.plugin.php",
           "events": [
             "OnHandleRequest",
             "OnContextSave",
@@ -65,6 +65,7 @@
     },
     "resolver": {
       "after": [
+        "resolve.migrate.php",
         "resolve.treehillstudio.php"
       ]
     }
