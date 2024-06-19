@@ -1,3 +1,7 @@
+# Deprecated
+This extra is no longer maintained. In case you need to do custom context routing we do recommend looking at https://github.com/modxcms/revolution/pull/16045.
+
+
 XRouting
 ==================
 
